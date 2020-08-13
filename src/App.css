@@ -2,7 +2,10 @@
   font-family: NinjaFont;
   src: url("./blame-z15z-webfont.woff");
 }
-
+html,
+body {
+  height: 100%;
+}
 #container {
   display: grid;
   grid-template-columns: 80px 80px 80px;
@@ -14,7 +17,8 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  background-color: powderblue;
+  height: 90vh;
 }
 #container > div {
   background-color: red;
@@ -38,9 +42,14 @@
   border-top: none !important;
 }
 #turn {
+  padding-top: 10px;
   margin-bottom: 10px;
   font-family: cursive;
 }
 #clearBtn {
-  margin-top: 10px;
+  margin-top: 15px;
+}
+
+.winner {
+  background-color: lawngreen !important;
 }
