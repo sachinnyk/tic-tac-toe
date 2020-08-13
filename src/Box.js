@@ -54,6 +54,7 @@ class Box extends React.Component {
   }
 
   clearBox() {
+    $("div#box").removeClass("winner");
     this.setState({
       checkState: new Array(9).fill(null),
       isGameFinished: false,
@@ -99,6 +100,9 @@ class Box extends React.Component {
       let winCondn = winningConditions[i];
       let [a, b, c] = winCondn;
       if (boxes[a] === player && boxes[b] === player && boxes[c] === player) {
+        document.querySelectorAll("#box")[a].classList.add("winner");
+        document.querySelectorAll("#box")[b].classList.add("winner");
+        document.querySelectorAll("#box")[c].classList.add("winner");
         return true;
       } else {
         continue;
@@ -131,7 +135,7 @@ class Box extends React.Component {
         <div
           className="modal fade"
           id="exampleModal"
-          tabindex="-1"
+          tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true">
           <div className="modal-dialog" role="document">
